@@ -14,78 +14,78 @@ struct WritingAnimation: View {
     @State var Thirdmove = false
     @State var Fourthmove = false
     
-    
     var body: some View {
-        NavigationStack{
-            ZStack{
+        NavigationStack {
+            ZStack {
                 Image("Backgroundbuatnulis")
                     .resizable()
-                    .frame(width: 1370,height: 1050)
+                    .frame(width: 1370, height: 1050)
                 
-                if Firstmove{
+                NavigationLink(destination:
+                    MateriView()) {
+                    Image("quit button")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .offset(x: 560, y: -395)
+                }
+                
+                if Firstmove {
                     Image("Vector 114")
                         .resizable()
                         .frame(width: 80, height: 100)
-                        .offset(x:-110, y:-125)
+                        .offset(x: -110, y: -125)
                 }
                 
-                
-                if Secondmove{
+                if Secondmove {
                     Image("Vector 116")
                         .resizable()
                         .frame(width: 210, height: 25)
-                        .offset(x:0, y: -120)
+                        .offset(x: 0, y: -120)
                 }
                 
-                if Thirdmove{
+                if Thirdmove {
                     Image("Vector 116")
                         .resizable()
                         .frame(width: 350, height: 30)
-                        .offset(x:0,y:0)
+                        .offset(x: 0, y: 0)
                 }
                 
-                if Fourthmove{
+                if Fourthmove {
                     Image("Vector 117")
                         .resizable()
                         .frame(width: 30, height: 400)
-                        .offset(x:0,y:0)
+                        .offset(x: 0, y: 0)
                 }
                 
-                NavigationLink(destination: MateriView()){
-                    Image("quit button")
-                        .resizable()
-                        .frame(width: 25,height:25)
-                        .offset(x:560,y: -395)
+            }
+            .navigationBarBackButtonHidden(true)
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                    withAnimation {
+                        self.Firstmove = true
+                    }
                 }
                 
-            }.navigationBarBackButtonHidden(true)
-        }.onAppear(){
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
-                withAnimation {
-                    self.Firstmove = true
+                Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
+                    withAnimation {
+                        self.Secondmove = true
+                    }
                 }
-            }
-            
-            Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { (_) in
-                withAnimation {
-                    self.Secondmove = true
+                
+                Timer.scheduledTimer(withTimeInterval: 6, repeats: false) { _ in
+                    withAnimation {
+                        self.Thirdmove = true
+                    }
                 }
-            }
-            
-            Timer.scheduledTimer(withTimeInterval: 6, repeats: false) { (_) in
-                withAnimation {
-                    self.Thirdmove = true
+                
+                Timer.scheduledTimer(withTimeInterval: 8, repeats: false) { _ in
+                    withAnimation {
+                        self.Fourthmove = true
+                    }
                 }
+                
+                AudioManager.shared.playloadAudio3()
             }
-            
-            Timer.scheduledTimer(withTimeInterval: 8, repeats: false) { (_) in
-                withAnimation {
-                    self.Fourthmove = true
-                }
-            }
-            
-            AudioManager.shared.playloadAudio3()
-            
         }
     }
 }
@@ -95,3 +95,4 @@ struct WritingAnimation_Preview: PreviewProvider {
         WritingAnimation()
     }
 }
+
