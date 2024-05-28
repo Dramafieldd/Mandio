@@ -24,7 +24,7 @@ struct ChooseTime: View {
                 
                 
                 // Menggunakan gambar yang diimpor
-                Image("Splash Screen 3")
+                Image("Tujuan")
                     .resizable() // Membuat gambar dapat diubah ukurannya
                     .aspectRatio(contentMode: .fill)
                 
@@ -46,7 +46,7 @@ struct ChooseTime: View {
                         }
                         //                .foregroundColor(.white) // 2
                         //                    .background(.blue)
-                        .offset(x: -418,y: -170)
+                        .offset(x: -418,y: -190)
                     }
                 }
                 
@@ -64,10 +64,7 @@ struct ChooseTime: View {
                             tapButtonStatus[1].toggle()
                         }
                 }
-                //             //buat kasih frame untk tapped area
-                //                .foregroundColor(.white) // 2
-                //                    .background(.blue)
-                .offset(x: 3,y: -170)
+                .offset(x: 3,y: -190)
                 
                 ZStack {
                     Circle()
@@ -83,7 +80,7 @@ struct ChooseTime: View {
                             tapButtonStatus[2].toggle()
                         }
                 }
-                .offset(x: 410,y: -170)
+                .offset(x: 410,y: -190)
                 
                 
                 HStack {
@@ -101,7 +98,7 @@ struct ChooseTime: View {
                                 tapButtonStatus[3].toggle()
                             }
                     }
-                    .offset(x: -200,y: 100)
+                    .offset(x: -200,y: 90)
                 }
                 
                 ZStack{
@@ -117,8 +114,7 @@ struct ChooseTime: View {
                         .onTapGesture {
                             tapButtonStatus[4].toggle()
                         }
-                }                       .offset(x: 220,y: 100)
-                
+                }                       .offset(x: 220,y: 90)
                 
                 
                 // Tombol Back
@@ -130,9 +126,49 @@ struct ChooseTime: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                 }
-                .offset(x: -480,y: -385)
+                .offset(x: -480,y: -390)
                 
                 VStack {
+                    Text("How long You Want To Learn")
+                        .font(.largeTitle)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.black)
+                        .offset(x:0,y:-350)
+                    
+                    HStack{
+                        Text("5 menit")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
+                            .offset(x:-300, y:0)
+                        
+                        Text("15 menit")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
+                            .offset(x:10, y:0)
+                        
+                        Text("30 menit")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
+                            .offset(x:300, y:0)
+                    }
+                    
+                    HStack{
+                        Text("10 menit")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
+                            .offset(x:-140, y:230)
+                        
+                        Text("20 menit")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
+                            .offset(x:170, y:230)
+                    }
+                   
                     //Tombol Start
                     Button(action: {
                         AudioManager.shared.loadAudio2()
@@ -149,7 +185,7 @@ struct ChooseTime: View {
                             .cornerRadius(10)
                             .shadow(radius: 3)
                     }
-                    .offset(x:0,y:380)
+                    .offset(x:0,y:300)
                 } .navigationBarBackButtonHidden(true)
             }
             .navigationDestination(isPresented: $isNavigating) {

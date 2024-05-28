@@ -21,7 +21,7 @@ struct ToKnow: View {
                 Image("Anak-Anak")
                     .resizable()
                     .frame(width: 230,height:230)
-                .offset(x:-450,y:-85)
+                    .offset(x:-450,y:-85)
                 
                 Image("Adult")
                     .resizable()
@@ -72,15 +72,13 @@ struct ToKnow: View {
                             .foregroundColor(.white)
                             .padding(.horizontal, 350)
                             .padding(.vertical, 15)
-                            .background(Color.orange)
-                            .cornerRadius(10)
+                            .background(Color(red: 0.99, green: 0.38, blue: 0.06))                            .cornerRadius(10)
                             .shadow(radius: 3)
                     }
                     .offset(x:0,y:380)
                 }
                 .navigationDestination(isPresented: $isNavigating) {
-                    ChooseTime()
-                }.navigationBarBackButtonHidden(true)
+                    ChooseTime()                }.navigationBarBackButtonHidden(true)
             }
             .onAppear(){AudioManager.shared.loadAudio3(named: "song2", withExtension: "mp3")}
         }
