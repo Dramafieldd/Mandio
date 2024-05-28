@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HowtoAnimation: View {
+struct HowToAnimation: View {
     
     @State var showFirstView = false
     @State var showSecondView = false
@@ -106,8 +106,6 @@ struct HowtoAnimation: View {
                 
                 VStack {
                     
-                    //TODO: kok gw klik dia gak ke contentview dah tapi ke materiview iye gak si wkwkwk
-                    
                     NavigationLink(destination: ContentView()){
                         Image("quit button")
                             .resizable()
@@ -133,9 +131,7 @@ struct HowtoAnimation: View {
                     self.showFirstView = true
                 }
             }
-            
-            //TODO: pake viewmodel aja daripada banyak gini
-            
+                        
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
                 withAnimation {
                     self.showSecondView = true
@@ -187,8 +183,7 @@ struct HowtoAnimation: View {
         }
     }
 }
-struct HowtoAnimation_Preview: PreviewProvider {
-    static var previews: some View {
-        HowtoAnimation()
-    }
+#Preview {
+    HowToAnimation()
 }
+

@@ -189,7 +189,7 @@ struct ChooseTime: View {
                 } .navigationBarBackButtonHidden(true)
             }
             .navigationDestination(isPresented: $isNavigating) {
-                HowtoAnimation()
+                HowToAnimation()
             }
             
         }.onAppear(){
@@ -201,9 +201,7 @@ struct ChooseTime: View {
     }
 }
 
-struct ChooseTime_Preview: PreviewProvider {
-    static var previews: some View {
-        ChooseTime()
-    }
+#Preview {
+    ChooseTime()
 }
 
