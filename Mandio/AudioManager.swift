@@ -17,6 +17,8 @@ class AudioManager {
     var audioPlayer3: AVAudioPlayer?
     var audioPlayer4: AVAudioPlayer?
 
+    //TODO: Diperbaiki nama funcnya + var
+    
     // Content View audio
     func loadAudio() {
         guard let url = Bundle.main.url(forResource: "song", withExtension: "mp3") else {

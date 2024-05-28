@@ -7,8 +7,8 @@
 //
 
 import SwiftUI
-
-struct Choosetime: View {
+//TODO: ChooseTime 
+struct ChooseTime: View {
     
     @State private var isNavigating = false
     @Environment(\.dismiss) var dismiss
@@ -17,6 +17,12 @@ struct Choosetime: View {
     var body: some View {
         NavigationStack {
             ZStack{
+                
+                //TODO: disini componentnya (text, background) ada yang dari gambar, tapi ada component yang front-end coding (yang bulet2 merah), menurut gw gak konsisten jadi mungkin bisa bikin bingung. Nama "Splash Screen 3" itu gak menjelaskan mana yang gambar mana yg front-end component
+                
+                //TODO: bikin card dari foto sama tulisan jadiin 1 biar bisa dipanggil aja.
+                
+                
                 // Menggunakan gambar yang diimpor
                 Image("Splash Screen 3")
                     .resizable() // Membuat gambar dapat diubah ukurannya
@@ -159,9 +165,9 @@ struct Choosetime: View {
     }
 }
 
-struct Choosetime_Preview: PreviewProvider {
+struct ChooseTime_Preview: PreviewProvider {
     static var previews: some View {
-        Choosetime()
+        ChooseTime()
     }
 }
 

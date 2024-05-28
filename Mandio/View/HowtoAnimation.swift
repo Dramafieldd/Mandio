@@ -28,6 +28,9 @@ struct HowtoAnimation: View {
                     .resizable() // Membuat gambar dapat diubah ukurannya
                     .aspectRatio(contentMode: .fill)
                 
+                
+                //TODO: kenapa gak if else ajaa
+                
                 if showFirstView{
                     Image("1")
                         .resizable()
@@ -102,6 +105,9 @@ struct HowtoAnimation: View {
                 }
                 
                 VStack {
+                    
+                    //TODO: kok gw klik dia gak ke contentview dah tapi ke materiview iye gak si wkwkwk
+                    
                     NavigationLink(destination: ContentView()){
                         Image("quit button")
                             .resizable()
@@ -127,6 +133,8 @@ struct HowtoAnimation: View {
                     self.showFirstView = true
                 }
             }
+            
+            //TODO: pake viewmodel aja daripada banyak gini
             
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
                 withAnimation {
