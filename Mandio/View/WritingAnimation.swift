@@ -90,9 +90,7 @@ struct WritingAnimation: View {
     }
 }
 
-struct WritingAnimation_Preview: PreviewProvider {
-    static var previews: some View {
-        WritingAnimation()
-    }
+#Preview {
+    WritingAnimation()
 }
 

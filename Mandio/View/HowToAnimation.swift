@@ -28,9 +28,6 @@ struct HowToAnimation: View {
                     .resizable() // Membuat gambar dapat diubah ukurannya
                     .aspectRatio(contentMode: .fill)
                 
-                
-                //TODO: kenapa gak if else ajaa
-                
                 if showFirstView{
                     Image("1")
                         .resizable()
@@ -105,15 +102,14 @@ struct HowToAnimation: View {
                 }
                 
                 VStack {
-                    
+                    //back button
                     NavigationLink(destination: ContentView()){
                         Image("quit button")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .padding(.bottom,  770)
-                            .padding(.leading, 900)
-                    }
+                    }.offset(x:500, y:-390)
                 }
+                //start button
                 if showTenView{
                     NavigationLink(destination: MateriView()){
                         Image("playButton")

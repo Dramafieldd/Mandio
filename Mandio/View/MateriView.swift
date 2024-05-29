@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import PencilKit
 
 struct MateriView: View {
+    
+    private var canvasView = PKCanvasView()
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -57,9 +61,12 @@ struct MateriView: View {
                 }.offset(x:560,y:-400)
                 
                 ZStack{
-                    Image("Buat nulis")
-                        .resizable()
-                        .frame(width: 500, height: 500)
+//                    Image("Buat nulis")
+//                        .resizable()
+//                        .frame(width: 500, height: 500)
+                    CanvasViewRepresentable(canvasView: canvasView)
+                        .frame(maxWidth:500, maxHeight: 500, alignment: .topLeading)
+                        .border(Color(red:0.75, green: 0.7, blue:0.89), width: 2)
                 }
                 
                 HStack {
@@ -85,8 +92,6 @@ struct MateriView: View {
     }
 }
 
-struct MateriView_Preview: PreviewProvider {
-    static var previews: some View {
-        MateriView()
-    }
+#Preview {
+    MateriView()
 }

@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-//TODO: ChooseTime 
+
+
 struct ChooseTime: View {
     
     @State private var isNavigating = false
@@ -44,8 +45,6 @@ struct ChooseTime: View {
                                     tapButtonStatus[0].toggle()
                                 }
                         }
-                        //                .foregroundColor(.white) // 2
-                        //                    .background(.blue)
                         .offset(x: -418,y: -190)
                     }
                 }
@@ -140,19 +139,19 @@ struct ChooseTime: View {
                             .font(.title)
                             .fontWeight(.medium)
                             .foregroundColor(Color.black)
-                            .offset(x:-300, y:0)
+                            .offset(x:-300, y:-10)
                         
                         Text("15 menit")
                             .font(.title)
                             .fontWeight(.medium)
                             .foregroundColor(Color.black)
-                            .offset(x:10, y:0)
+                            .offset(x:10, y:-10)
                         
                         Text("30 menit")
                             .font(.title)
                             .fontWeight(.medium)
                             .foregroundColor(Color.black)
-                            .offset(x:300, y:0)
+                            .offset(x:300, y:-10)
                     }
                     
                     HStack{
